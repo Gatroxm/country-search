@@ -1,27 +1,99 @@
-# PruebaMundoMujer
+# Country Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Country Search es una aplicación web que permite buscar información sobre países utilizando la API de RestCountries. La aplicación proporciona detalles como el nombre común y oficial del país, la región, la capital, el área, y las monedas utilizadas. También muestra un mapa del país utilizando Google Maps.
 
-## Development server
+## Tabla de Contenidos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Características](#características)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Tecnologías](#tecnologías)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Contribuciones](#contribuciones)
+- [Licencia](#licencia)
 
-## Code scaffolding
+## Características
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Búsqueda de Países**: Permite buscar información de un país por nombre.
+- **Información Detallada**: Muestra el nombre común y oficial, región, capital, área y monedas del país.
+- **Integración de Mapas**: Muestra un mapa del país utilizando Google Maps.
+- **Responsive Design**: La interfaz está optimizada para dispositivos móviles y de escritorio.
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Sigue estos pasos para clonar y configurar el proyecto en tu entorno local:
 
-## Running unit tests
+1. **Clona el repositorio**:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/Gatroxm/country-search.git
+   ```
 
-## Running end-to-end tests
+2. **Navega al directorio del proyecto**:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   cd country-search
+   ```
 
-## Further help
+3. **Instala las dependencias**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   npm install
+   ```
+
+4. **Inicia el servidor de desarrollo**:
+
+   ```bash
+   ng serve
+   ```
+
+   Abre tu navegador y navega a `http://localhost:4200` para ver la aplicación en acción.
+
+## Uso
+
+1. **Buscar un País**: Ingresa el nombre del país en el campo de búsqueda y haz clic en el botón "Buscar".
+2. **Ver Información**: La información sobre el país se mostrará a la derecha, incluyendo un mapa y detalles adicionales.
+3. **Ver Mapa**: El mapa del país se mostrará en un iframe utilizando Google Maps.
+
+## Tecnologías
+
+- **Angular 17.x**: Framework utilizado para construir la aplicación.
+- **RestCountries API**: API para obtener información sobre los países.
+- **Google Maps**: API para mostrar mapas (integrada a través de un iframe).
+- **Bootstrap**: Framework CSS para diseño responsive.
+
+## Estructura del Proyecto
+
+```bash
+country-search/ │ ├── src/ │ ├── app/ │ │ ├── country-search/ │ │ │ ├── country-search.component.ts │ │ │ ├── country-search.component.html │ │ │ ├── country-search.component.css │ │ │ └── country-search.component.spec.ts │ │ ├── services/ │ │ │ └── country.service.ts │ │ ├── pipes/ │ │ │ └── safe-url.pipe.ts │ │ ├── app.config.ts │ │ ├── app.config.server.ts │ │ ├── app.routes.ts │ │ ├── main.server.ts │ │ └── main.ts │ ├── assets/ │ └── index.html ├── .gitignore ├── package.json └── README.md
+```
+
+- **`country-search.component.ts`**: Componente principal para la búsqueda y visualización de países.
+- **`country.service.ts`**: Servicio para interactuar con la API de RestCountries.
+- **`safe-url.pipe.ts`**: Pipe para manejar URLs seguras para los iframes.
+- **`app.config.ts`** y **`app.config.server.ts`**: Configuración de la aplicación para el entorno de cliente y servidor.
+- **`app.routes.ts`**: Configuración de rutas.
+- **`main.server.ts`** y **`main.ts`**: Archivos de entrada para la aplicación.
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Si deseas contribuir, por favor sigue estos pasos:
+
+1. **Haz un Fork del Repositorio**.
+2. **Crea una Rama para tu Feature** (`git checkout -b feature/nueva-caracteristica`).
+3. **Haz un Commit de tus Cambios** (`git commit -am 'Añadida nueva característica'`).
+4. **Haz un Push a la Rama** (`git push origin feature/nueva-caracteristica`).
+5. **Crea un Pull Request**.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia del Autor. Todos los derechos reservados. Para más detalles, consulta el archivo [LICENSE](LICENSE).
+
+## Contacto
+
+Si tienes alguna pregunta o necesitas asistencia adicional, no dudes en contactarme:
+
+- **Nombre**: [Gustavo Adolfo Muñoz Reyes]
+- **Correo Electrónico**: [tavoxpau@gmail.com]
+- **GitHub**: [[Gatroxm](https://github.com/Gatroxm)]
+- **Portafolio**: [https://gatroxm.github.io/](https://gatroxm.github.io/)
