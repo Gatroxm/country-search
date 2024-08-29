@@ -1,0 +1,59 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 mb-5">
+      <div class="d-flex flex-column align-items-center justify-content-center h-100">
+
+        <h2 class="text-center mb-4">Información de País</h2>
+        <form class="w-100" (ngSubmit)="searchCountry()">
+          <div class="input-group mb-3">
+            <label for="countryName" class="input-group-text">Nombre del país:</label>
+            <input type="text" id="countryName" [(ngModel)]="countryName" name="countryName" required
+              class="form-control">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div class="col-12">
+      <div *ngIf="countryData">
+
+        <div class="row">
+          <div class="col-6">
+            <div class="ratio ratio-16x9">
+              <iframe class="w-100" [src]="countryData.maps.openStreetMaps | safeUrl" idth="600" height="450"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="col-6">
+            <h3 class="text-center mb-4">{{ countryData.name.common }} ({{ countryData.name.official }})</h3>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <strong>Región: </strong> {{ countryData.region }}
+              </li>
+              <li class="list-group-item">
+                <strong>Capital: </strong> {{ countryData.capital[0] }}
+              </li>
+              <li class="list-group-item">
+                <strong>Área: </strong> {{ countryData.area }} km²
+              </li>
+              <li class="list-group-item">
+                <strong>Moneda: </strong> {{ getCurrencies() }}
+              </li>
+              <li class="list-group-item">
+                <strong>Google Maps: </strong> <a [href]="countryData.maps.googleMaps" target="_blank">Ver
+                  Mapa</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-12">
+      <div *ngIf="error">{{ error }}</div>
+    </div>
+  </div>
+</div>
